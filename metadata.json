@@ -1,0 +1,8 @@
+{
+  "name": "KASC ERP",
+  "description": "College Administration Management of KASC",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

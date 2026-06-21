@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-blob: blob 7s infinite;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   COLLEGE BRANDING HIGH-CONTRAST THEME RULES
+   ========================================================================== */
+html.college body {
+  background-color: #080d1a !important;
+  color: #f8fafc !important;
+}
+
+/* Cards, headers, and dashboard widgets */
+html.college .bg-white,
+html.college header,
+html.college aside,
+html.college .bg-slate-50\/55,
+html.college .bg-slate-50\/50 {
+  background-color: #0f162a !important;
+  border-color: rgba(240, 154, 26, 0.3) !important;
+}
+
+html.college .bg-slate-50,
+html.college .bg-slate-100,
+html.college .bg-slate-50\/50,
+html.college .bg-gray-50 {
+  background-color: #0c1122 !important;
+}
+
+/* Borders and lines */
+html.college .border-slate-200,
+html.college .border-slate-100,
+html.college .border-slate-300,
+html.college .border-slate-205,
+html.college .border-gray-200,
+html.college .divide-slate-200,
+html.college .divide-slate-150 {
+  border-color: rgba(240, 154, 26, 0.25) !important;
+  border-top-color: rgba(240, 154, 26, 0.25) !important;
+  border-bottom-color: rgba(240, 154, 26, 0.25) !important;
+  border-left-color: rgba(240, 154, 26, 0.25) !important;
+  border-right-color: rgba(240, 154, 26, 0.25) !important;
+  divide-color: rgba(240, 154, 26, 0.25) !important;
+}
+
+/* Form input fields */
+html.college input,
+html.college select,
+html.college textarea {
+  background-color: #080d1a !important;
+  color: #ffffff !important;
+  border-color: rgba(240, 154, 26, 0.4) !important;
+}
+
+html.college input::placeholder,
+html.college textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Typography, headers, and text labels */
+html.college .text-slate-900,
+html.college .text-slate-800,
+html.college .text-slate-700,
+html.college .text-slate-850,
+html.college .text-gray-900,
+html.college .text-gray-800,
+html.college .text-gray-700,
+html.college h1,
+html.college h2,
+html.college h3,
+html.college h4,
+html.college h5,
+html.college h6 {
+  color: #ffffff !important;
+}
+
+html.college .text-slate-600,
+html.college .text-slate-500,
+html.college .text-slate-400,
+html.college .text-slate-450,
+html.college .text-gray-500,
+html.college .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+/* Custom golden text and branding highlights */
+html.college .text-[#1e2e6b],
+html.college .text-indigo-750,
+html.college .text-indigo-700 {
+  color: #ffd072 !important; /* Brilliant gold contrast */
+}
+
+html.college .bg-[#1e2e6b]\/5,
+html.college .bg-[#1e2e6b]\/10 {
+  background-color: rgba(240, 154, 26, 0.15) !important;
+  color: #ffd072 !important;
+}
+
+html.college .text-[#f09a1a],
+html.college .text-amber-600,
+html.college .text-amber-500 {
+  color: #ffbe3b !important;
+}
+
+/* Hovers */
+html.college .hover\:bg-slate-50\/55:hover,
+html.college .hover\:bg-slate-50\/50:hover,
+html.college .hover\:bg-slate-100:hover,
+html.college .hover\:bg-slate-50:hover,
+html.college .hover\:bg-gray-100:hover {
+  background-color: #161e38 !important;
+}
+
+html.college .hover\:text-slate-850:hover,
+html.college .hover\:text-slate-800:hover,
+html.college .hover\:text-slate-900:hover {
+  color: #ffffff !important;
+}
