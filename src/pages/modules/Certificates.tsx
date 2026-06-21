@@ -83,7 +83,7 @@ interface StudentUploadedCertificate {
   date: string;
   fileName: string;
   fileSize: string;
-  fileDataUrlUrl?: string;
+  fileDataUrl?: string;
   status: 'APPROVED' | 'PENDING' | 'REJECTED';
   pointsEarned: number;
 }
@@ -252,7 +252,7 @@ export default function Certificates() {
           date: extDate || new Date().toISOString().split('T')[0],
           fileName: file.name,
           fileSize: file.size,
-          fileDataUrlUrl: file.data,
+          fileDataUrl: file.data,
           status: 'PENDING' as const,
           pointsEarned: pts
         };
@@ -1400,8 +1400,8 @@ export default function Certificates() {
                             <button
                               type="button"
                               onClick={() => {
-                                if (cert.fileDataUrlUrl) {
-                                  setPreviewFile({ name: cert.fileName, dataUrl: cert.fileDataUrlUrl });
+                                if (cert.fileDataUrl) {
+                                  setPreviewFile({ name: cert.fileName, dataUrl: cert.fileDataUrl });
                                 } else {
                                   alert(`Scanned Document: ${cert.fileName}\nRegistered with cryptographic hash, but binary data-url is stored on separate archival storage nodes.`);
                                 }

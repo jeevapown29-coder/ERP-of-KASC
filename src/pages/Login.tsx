@@ -1101,7 +1101,14 @@ export default function Login() {
               </p>
               <p className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-[#f09a1a] shrink-0" /> 
-                <span className="hover:underline cursor-pointer">www.kongunaducollege.ac.in</span>
+                <a 
+                  href="https://kasc-erp.ac.in" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline text-amber-400 font-bold"
+                >
+                  kasc-erp.ac.in
+                </a>
               </p>
             </div>
           </div>
