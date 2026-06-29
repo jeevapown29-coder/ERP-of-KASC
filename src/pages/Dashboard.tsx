@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Role } from '../types';
 import AISuggestionsModule from '../components/AISuggestionsModule';
+import DashboardAnalytics from '../components/DashboardAnalytics';
 import { 
   Users, CheckCircle, Clock, BookOpen, AlertCircle, FileText, Download, CalendarDays 
 } from 'lucide-react';
@@ -64,6 +65,10 @@ export default function Dashboard() {
       {user.role === Role.HOSTEL_WARDEN && <WardenDashboard />}
       {user.role === Role.ACCOUNTANT && <AccountantDashboard />}
       {user.role === Role.SPORTS_COORDINATOR && <SportsCoordinatorDashboard />}
+
+      <div className="pt-4">
+        <DashboardAnalytics />
+      </div>
 
       <div className="pt-4">
         <AISuggestionsModule />

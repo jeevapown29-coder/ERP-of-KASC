@@ -5,12 +5,13 @@ import { KascLogo } from '../KascLogo';
 import { 
   LayoutDashboard, Users, Calendar, FileText, 
   CreditCard, Trophy, BookOpen, Home, Bell, Clock, PieChart,
-  CalendarDays, UserCheck, User as UserIcon, Award, Briefcase
+  CalendarDays, UserCheck, User as UserIcon, Award, Briefcase, GraduationCap
 } from 'lucide-react';
 import { Role } from '../../types';
 
 const allNavItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, path: '/', roles: Object.values(Role) },
+  { id: 'smart-classroom', label: 'Google Classroom', icon: GraduationCap, path: 'https://classroom.google.com/c/ODY0NzA4MTI1NTg2/a/ODY0NzA4MTI1NjE0/details', roles: Object.values(Role), isExternal: true },
   { id: 'profile', label: 'My Profile', icon: UserIcon, path: '/profile', roles: Object.values(Role) },
   { id: 'students', label: 'Student Mgmt', icon: Users, path: '/students', roles: [Role.ADMIN, Role.PRINCIPAL, Role.HOD, Role.FACULTY] },
   { id: 'academic-calendar', label: 'Academic Calendar', icon: CalendarDays, path: '/academic-calendar', roles: Object.values(Role) },
@@ -46,20 +47,33 @@ export default function Sidebar() {
       <div className="flex-1 overflow-y-auto py-6 px-3">
         <nav className="space-y-1">
           {navItems.map((item) => (
-            <NavLink
-              key={item.id}
-              to={item.path}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition-colors ${
-                  isActive 
-                    ? 'bg-[#f09a1a] text-white shadow-sm' 
-                    : 'text-slate-300 hover:text-white hover:bg-white/10'
-                }`
-              }
-            >
-              <item.icon className="w-5 h-5 shrink-0" />
-              <span>{item.label}</span>
-            </NavLink>
+            (item as any).isExternal ? (
+              <a
+                key={item.id}
+                href={item.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-300 hover:text-white hover:bg-white/10 cursor-pointer"
+              >
+                <item.icon className="w-5 h-5 shrink-0" />
+                <span>{item.label}</span>
+              </a>
+            ) : (
+              <NavLink
+                key={item.id}
+                to={item.path}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium transition-colors ${
+                    isActive 
+                      ? 'bg-[#f09a1a] text-white shadow-sm' 
+                      : 'text-slate-300 hover:text-white hover:bg-white/10'
+                  }`
+                }
+              >
+                <item.icon className="w-5 h-5 shrink-0" />
+                <span>{item.label}</span>
+              </NavLink>
+            )
           ))}
         </nav>
       </div>

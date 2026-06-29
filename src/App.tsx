@@ -23,6 +23,7 @@ import AcademicCalendar from './pages/modules/AcademicCalendar';
 import Profile from './pages/modules/Profile';
 import Certificates from './pages/modules/Certificates';
 import Placement from './pages/modules/Placement';
+import SmartClassroom from './pages/modules/SmartClassroom';
 import Unauthorized from './pages/Unauthorized';
 import { useAuth } from './contexts/AuthContext';
 import { Role } from './types';
@@ -54,6 +55,12 @@ export default function App() {
         
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path="smart-classroom" element={
+            <RoleGuard 
+              roles={allRoles} 
+              element={<SmartClassroom />} 
+            />
+          } />
           <Route path="students" element={
             <RoleGuard 
               roles={[Role.ADMIN, Role.PRINCIPAL, Role.HOD, Role.FACULTY]} 

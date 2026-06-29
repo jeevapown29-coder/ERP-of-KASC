@@ -101,7 +101,7 @@ export default function Certificates() {
     return [
       {
         id: 'EXT_ACH_001',
-        studentName: 'Jeeva Pown',
+        studentName: 'Jeeva D',
         eventName: 'National Level Hack-A-Thon (Neural Hack 2.0)',
         organizedBy: 'Bharathiar University Division',
         category: 'WINNER',
@@ -114,7 +114,7 @@ export default function Certificates() {
       },
       {
         id: 'EXT_ACH_002',
-        studentName: 'Jeeva Pown',
+        studentName: 'Jeeva D',
         eventName: 'Inter-Collegiate Volleyball Tournament',
         organizedBy: 'Sri Ramakrishna Mission Vidyalaya',
         category: 'PARTICIPATION',
@@ -127,7 +127,7 @@ export default function Certificates() {
       },
       {
         id: 'EXT_ACH_003',
-        studentName: 'Jeeva Pown',
+        studentName: 'Jeeva D',
         eventName: 'R-Programming Statistical Data Modeling Contest',
         organizedBy: 'PSG College of Technology',
         category: 'WINNER',
@@ -154,9 +154,9 @@ export default function Certificates() {
   const [extDate, setExtDate] = useState('');
   const [extStudentName, setExtStudentName] = useState(() => {
     if (user?.email?.toLowerCase().includes('pown') || user?.email?.toLowerCase().includes('jeeva')) {
-      return 'Jeeva Pown';
+      return 'Jeeva D';
     }
-    return user?.name || 'Jeeva Pown';
+    return user?.name || 'Jeeva D';
   });
   interface AttachedFile {
     id: string;
@@ -279,11 +279,11 @@ export default function Certificates() {
   
   // Custom states
   const [recipientName, setRecipientName] = useState(() => {
-    // Try to personalize for Jeeva Pown if matching email/name, or fallback to current user
+    // Try to personalize for Jeeva D if matching email/name, or fallback to current user
     if (user?.email?.toLowerCase().includes('pown') || user?.email?.toLowerCase().includes('jeeva')) {
-      return 'Jeeva Pown';
+      return 'Jeeva D';
     }
-    return user?.name || 'Jeeva Pown';
+    return user?.name || 'Jeeva D';
   });
   
   const [selectedPresetId, setSelectedPresetId] = useState('dev_pown');
@@ -592,7 +592,7 @@ export default function Certificates() {
         </div>
       </div>
 
-      {/* Developer Recognition Banner (Special Highlight to celebrate Jeeva Pown) */}
+      {/* Developer Recognition Banner (Special Highlight to celebrate Jeeva D) */}
       <div className="relative overflow-hidden bg-gradient-to-r from-amber-500/10 via-orange-600/5 to-slate-900/5 dark:from-[#f09a1a]/15 dark:to-slate-900 border border-amber-500/20 dark:border-amber-500/30 rounded-3xl p-6 md:p-8 shadow-xs">
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none transform translate-x-4 -translate-y-4">
           <Award className="w-56 h-56 text-[#f09a1a]" />
@@ -608,14 +608,14 @@ export default function Certificates() {
           </h2>
           
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            In prompt response to your request, we have pre-loaded a high-fidelity **Autonomous ERP Certification of Scholastic Craftsmanship** celebrating **Jeeva Pown** as the lead system architect. Use the interactive suite below to preview the golden ribbon design, customize the text, or download the full-resolution vector PDF immediately!
+            In prompt response to your request, we have pre-loaded a high-fidelity **Autonomous ERP Certification of Scholastic Craftsmanship** celebrating **Jeeva D** as the lead system architect. Use the interactive suite below to preview the golden ribbon design, customize the text, or download the full-resolution vector PDF immediately!
           </p>
 
           <div className="flex flex-wrap gap-2.5 pt-2">
             <button
               onClick={() => {
                 setSelectedPresetId('dev_pown');
-                setRecipientName('Jeeva Pown');
+                setRecipientName('Jeeva D');
               }}
               className="flex items-center gap-2 px-4 py-2 bg-[#f09a1a] hover:bg-amber-600 dark:hover:bg-amber-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-95 cursor-pointer"
             >
@@ -624,7 +624,7 @@ export default function Certificates() {
             <button
               onClick={() => {
                 setSelectedPresetId('dev_pown');
-                setRecipientName('Jeeva Pown');
+                setRecipientName('Jeeva D');
                 // Instant generate
                 setTimeout(() => {
                   generatePDF();
@@ -959,7 +959,7 @@ export default function Certificates() {
               <button
                 onClick={() => {
                   setSelectedPresetId('dev_pown');
-                  setRecipientName('Jeeva Pown');
+                  setRecipientName('Jeeva D');
                   setCustomTitle('ERP INTELLECT & DEVELOPMENT ARCHITECT AWARD');
                   flashStatus('Preset values loaded!');
                 }}
