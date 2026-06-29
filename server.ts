@@ -47,9 +47,17 @@ async function startServer() {
           }
         }
       });
+      
+      const requestedModel = req.body.model || "gemini-2.5-flash";
+      const systemInstruction = req.body.systemInstruction || "You are an expert educational ERP advisor at Kongunadu Arts and Science College. Keep responses accurate, highly professional, and perfectly structured.";
+
       const response = await ai.models.generateContent({
-        model: "gemini-3.5-flash",
+        model: requestedModel,
         contents: prompt,
+        config: {
+          systemInstruction: systemInstruction,
+          temperature: req.body.temperature ?? 0.2,
+        }
       });
 
       res.json({ result: response.text });

@@ -122,7 +122,11 @@ export default function AISuggestionsModule() {
       const res = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: finalPrompt })
+        body: JSON.stringify({ 
+          prompt: finalPrompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are the Elite Academic Strategy Architect at Kongunadu Arts and Science College. Provide deeply impactful, professional, role-specific insights and strategic action items.'
+        })
       });
 
       const data = await res.json();

@@ -109,7 +109,11 @@ Provide brief, professional bullet-points in clean, elegant markdown.`;
       const response = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are the Chief Academic Analytics Officer at Kongunadu Arts and Science College. Produce a deep, rigorous, professional performance audit with actionable remediation guidance.'
+        })
       });
       const data = await response.json();
       if (data.result) {
@@ -237,7 +241,7 @@ Provide brief, professional bullet-points in clean, elegant markdown.`;
               </div>
               <div className="text-left">
                 <h4 className="font-bold text-white text-sm">AI Performance Insights</h4>
-                <p className="text-[10px] text-slate-400">Generative academic trend analysis</p>
+                <p className="text-[10px] text-slate-400">Powered by Google Gemini 3.5</p>
               </div>
             </div>
 

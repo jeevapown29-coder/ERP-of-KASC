@@ -11,7 +11,7 @@ import { Role } from '../../types';
 
 const allNavItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, path: '/', roles: Object.values(Role) },
-  { id: 'smart-classroom', label: 'Google Classroom', icon: GraduationCap, path: 'https://classroom.google.com/c/ODY0NzA4MTI1NTg2/a/ODY0NzA4MTI1NjE0/details', roles: Object.values(Role), isExternal: true },
+  { id: 'smart-classroom', label: 'Google Classroom', icon: GraduationCap, path: '/smart-classroom', roles: Object.values(Role) },
   { id: 'profile', label: 'My Profile', icon: UserIcon, path: '/profile', roles: Object.values(Role) },
   { id: 'students', label: 'Student Mgmt', icon: Users, path: '/students', roles: [Role.ADMIN, Role.PRINCIPAL, Role.HOD, Role.FACULTY] },
   { id: 'academic-calendar', label: 'Academic Calendar', icon: CalendarDays, path: '/academic-calendar', roles: Object.values(Role) },

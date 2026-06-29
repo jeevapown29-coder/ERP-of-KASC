@@ -65,7 +65,11 @@ Output in beautiful, clean markdown format.`;
       const response = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are an Elite Academic Syllabus Architect at Kongunadu Arts and Science College. Build structured, rigorous lesson plans.'
+        })
       });
       const data = await response.json();
       if (data.result) {
@@ -98,7 +102,11 @@ Output in clean, readable markdown structure.`;
       const response = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are an Elite Academic Assessment Specialist and Examiner at Kongunadu Arts and Science College. Formulate highly balanced, rigorous multiple-choice questions.'
+        })
       });
       const data = await response.json();
       if (data.result) {
@@ -133,7 +141,11 @@ Ensure the tone is motivating, professional, and clear.`;
       const response = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are a Senior Student Success Coach and Revision Director at Kongunadu Arts and Science College. Design highly motivating, precise day-by-day revision guides.'
+        })
       });
       const data = await response.json();
       if (data.result) {
@@ -165,7 +177,11 @@ Example structure:
       const response = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-flash',
+          systemInstruction: 'You are an Elite Flashcard Compiler. Output ONLY a clean, valid raw JSON array containing exactly five study items with no explanation outside the array.'
+        })
       });
       const data = await response.json();
       
@@ -197,7 +213,7 @@ Example structure:
       {/* Navigation list left side (1 col) */}
       <div className="lg:col-span-1 space-y-3 bg-white p-4 rounded-xl border border-slate-200">
         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block border-b border-slate-100 pb-2">
-          KASC AI Tools Menu
+          Google Gemini 3.5 Tools
         </span>
 
         <button
@@ -506,7 +522,7 @@ Example structure:
             <div className="flex items-center gap-2 border-b border-slate-800 pb-3 mb-4">
               <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
               <h4 className="font-bold text-white text-sm">
-                KASC AI Generation Desk
+                Google Gemini 3.5 Desk
               </h4>
             </div>
 

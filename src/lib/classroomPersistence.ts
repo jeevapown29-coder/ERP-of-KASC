@@ -35,6 +35,10 @@ const SEED_CLASSROOMS: Classroom[] = [
     semester: 'Semester IV',
     department: 'Computer Science',
     googleClassroomUrl: 'https://classroom.google.com/c/ODY0NzA4MTI1NTg2/a/ODY0NzA4MTI1NjE0/details',
+    googleMeetUrl: 'https://meet.google.com/abc-defg-hij',
+    classCode: 'g47k29x',
+    googleDriveUrl: 'https://drive.google.com/drive/folders/1a2b3c4d5e6f7g8h9i0j',
+    googleCalendarUrl: 'https://calendar.google.com/calendar/r',
     createdAt: new Date(Date.now() - 30 * 24 * 3600000).toISOString()
   },
   {
@@ -49,6 +53,10 @@ const SEED_CLASSROOMS: Classroom[] = [
     semester: 'Semester II',
     department: 'Computer Science',
     googleClassroomUrl: 'https://classroom.google.com/c/ODY0NzA4MTI1NTg2/a/ODY0NzA4MTI1NjE0/details',
+    googleMeetUrl: 'https://meet.google.com/xyz-uvwx-yza',
+    classCode: 'j38m25y',
+    googleDriveUrl: 'https://drive.google.com/drive/folders/0b9h8g7f6e5d4c3b2a1o',
+    googleCalendarUrl: 'https://calendar.google.com/calendar/r',
     createdAt: new Date(Date.now() - 15 * 24 * 3600000).toISOString()
   }
 ];
@@ -438,13 +446,14 @@ export function loadClassroomOSState(): ClassroomOSData {
     try {
       const parsed = JSON.parse(data);
       const classrooms: Classroom[] = (parsed.classrooms || []).map((c: any) => {
-        if (!c.googleClassroomUrl) {
-          return {
-            ...c,
-            googleClassroomUrl: 'https://classroom.google.com/c/ODY0NzA4MTI1NTg2/a/ODY0NzA4MTI1NjE0/details'
-          };
-        }
-        return c;
+        return {
+          googleClassroomUrl: 'https://classroom.google.com/c/ODY0NzA4MTI1NTg2/a/ODY0NzA4MTI1NjE0/details',
+          googleMeetUrl: c.id === 'class-2' ? 'https://meet.google.com/xyz-uvwx-yza' : 'https://meet.google.com/abc-defg-hij',
+          classCode: c.id === 'class-2' ? 'j38m25y' : 'g47k29x',
+          googleDriveUrl: c.id === 'class-2' ? 'https://drive.google.com/drive/folders/0b9h8g7f6e5d4c3b2a1o' : 'https://drive.google.com/drive/folders/1a2b3c4d5e6f7g8h9i0j',
+          googleCalendarUrl: 'https://calendar.google.com/calendar/r',
+          ...c
+        };
       });
       // Fallbacks for missing arrays to ensure backward compatibility
       return {

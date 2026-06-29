@@ -170,7 +170,7 @@ Tone: Objective, technical, consumer-advocate.`
     emoji: '✍️',
     color: 'text-emerald-300',
     description: 'Technical copywriting, marketing copy, professional email structures, and documentation.',
-    presetPrompt: 'Draft a high-converting launch email sequence for AXENTRA AI OS to send to tech developers.',
+    presetPrompt: 'Draft a high-converting launch email sequence for Nova OS to send to tech developers.',
     systemPrompt: `You are the Writing Assistant for Nova OS, acting as an elite technical copywriter and brand strategist.
 Domain-Specific Instructions:
 - Master diverse narrative voices (minimalist, persuasive, academic, storytelling).

@@ -12,6 +12,10 @@ export interface Classroom {
   semester: string;
   department: string;
   googleClassroomUrl?: string;
+  googleMeetUrl?: string;
+  classCode?: string;
+  googleDriveUrl?: string;
+  googleCalendarUrl?: string;
   createdAt: string;
 }
 

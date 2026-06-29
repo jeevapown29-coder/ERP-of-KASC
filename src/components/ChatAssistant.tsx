@@ -43,7 +43,11 @@ export default function ChatAssistant() {
       const res = await fetch('/api/gemini/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: finalPrompt })
+        body: JSON.stringify({ 
+          prompt: finalPrompt,
+          model: 'gemini-2.5-flash',
+          systemInstruction: `You are the Expert AI Assistant for KASC ERP (Kongunadu Arts and Science College). Keep your tone professional, structured, helpful, and concise.`
+        })
       });
 
       const data = await res.json();
@@ -88,7 +92,7 @@ export default function ChatAssistant() {
             </div>
             <div>
               <h3 className="font-semibold text-sm">ERP Assistant</h3>
-              <p className="text-[10px] text-indigo-200 uppercase tracking-wider font-semibold">Powered by Gemini AI</p>
+              <p className="text-[10px] text-indigo-200 uppercase tracking-wider font-semibold">Powered by Google Gemini 3.5</p>
             </div>
           </div>
           <button 

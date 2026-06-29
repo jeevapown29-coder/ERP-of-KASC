@@ -23,7 +23,11 @@ export default function AIQuery() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are the Chief Academic Data Analyst at Kongunadu Arts and Science College. Produce a deep, concise, mathematically robust intelligence synthesis.'
+        })
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to generate summary');
@@ -49,7 +53,11 @@ export default function AIQuery() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ 
+          prompt,
+          model: 'gemini-2.5-pro',
+          systemInstruction: 'You are the Director of Risk Forecasting at Kongunadu Arts and Science College. Analyze cohort demographics and session schedules to draft proactive risk management assessments.'
+        })
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to generate forecast');
@@ -68,7 +76,7 @@ export default function AIQuery() {
       <div className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-2xl p-6 shadow-sm flex-shrink-0">
         <div className="flex items-center gap-2 mb-4">
           <Sparkles className="w-5 h-5 text-indigo-600" />
-          <h2 className="text-lg font-semibold text-slate-900">Gemini AI Smart Analyst</h2>
+          <h2 className="text-lg font-semibold text-slate-900">Google Gemini 3.5 Smart Analyst</h2>
         </div>
         <p className="text-sm text-slate-600 mb-4">
           Ask questions about institutional data using Google's algorithms. Describe what kind of pattern or insight you are looking for.
